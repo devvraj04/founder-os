@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 
 const TICKER_ITEMS = [
@@ -14,11 +13,9 @@ const TICKER_ITEMS = [
   "FOUNDERS AVERAGE FEWER THAN 4 DAYS OFF IN 14 MONTHS",
 ];
 
-const PHASES = ["EMPATHIZE", "DEFINE", "IDEATE", "PROTOTYPE", "TEST"];
-
 const EMPATHY_MAP = [
   {
-    quad: "SEE",
+    quad: "THE REALITY",
     color: "#fff",
     items: [
       "Diminishing runway charts & constrained cash flow",
@@ -28,7 +25,7 @@ const EMPATHY_MAP = [
     ],
   },
   {
-    quad: "HEAR",
+    quad: "THE EXPECTATION",
     color: "#FFFF00",
     items: [
       "VCs demanding accelerated path to profitability",
@@ -38,7 +35,7 @@ const EMPATHY_MAP = [
     ],
   },
   {
-    quad: "DO",
+    quad: "THE GRIND",
     color: "#fff",
     items: [
       "Work continuously without temporal boundaries",
@@ -48,7 +45,7 @@ const EMPATHY_MAP = [
     ],
   },
   {
-    quad: "THINK & FEEL",
+    quad: "THE TOLL",
     color: "#000",
     textColor: "#fff",
     items: [
@@ -60,34 +57,34 @@ const EMPATHY_MAP = [
   },
 ];
 
-const HMW = [
+const DIRECTIVES = [
   {
-    num: "HMW 01",
-    q: "How might we help founders enforce genuine, uninterrupted periods of operational disconnection without inducing secondary anxiety?",
+    num: "CORE 01",
+    q: "Enforce genuine, uninterrupted periods of operational disconnection without inducing secondary anxiety.",
     tool: "Disconnect Mode",
     href: "/disconnect-mode",
   },
   {
-    num: "HMW 02",
-    q: "How might we lower the perceived operational risk of delegation so founders feel comfortable transferring control?",
+    num: "CORE 02",
+    q: "Lower the perceived operational risk of delegation so you feel comfortable transferring control.",
     tool: "Cognitive Shield",
     href: "/cognitive-shield",
   },
   {
-    num: "HMW 03",
-    q: "How might we intercept, filter, and autonomously triage incoming micro-decisions to protect the founder's psychological capital?",
+    num: "CORE 03",
+    q: "Intercept, filter, and autonomously triage incoming micro-decisions to protect your psychological capital.",
     tool: "Cognitive Shield",
     href: "/cognitive-shield",
   },
   {
-    num: "HMW 04",
-    q: "How might we foster asynchronous, high-trust peer support networks that normalize vulnerability?",
+    num: "CORE 04",
+    q: "Foster asynchronous, high-trust peer support networks that normalize vulnerability.",
     tool: "FounderWalk",
     href: "/founder-walk",
   },
   {
-    num: "HMW 05",
-    q: "How might we redesign the daily flow of information so a founder only encounters data requiring human-level judgment?",
+    num: "CORE 05",
+    q: "Redesign the daily flow of information so you only encounter data requiring human-level judgment.",
     tool: "Cognitive Shield",
     href: "/cognitive-shield",
   },
@@ -99,7 +96,7 @@ const SOLUTIONS = [
     name: "THE COGNITIVE SHIELD",
     sub: "AI Triage Protocol",
     desc: "An intelligent, API-driven routing system that intercepts all inbound communications and pending decisions, categorizes them by existential risk level, and autonomously delegates or defers — keeping only 2 items in the Founder's queue.",
-    hmw: "HMW 03 — Intercept & triage micro-decisions",
+    hmw: "Solves: Intercept & triage micro-decisions",
     href: "/cognitive-shield",
     pages: ["Kanban Dashboard", "Delegation Engine", "Quarantine Queue", "Security Layer"],
     accent: "#FFFF00",
@@ -109,7 +106,7 @@ const SOLUTIONS = [
     name: "FOUNDER DISCONNECT MODE",
     sub: "The Proxy Wall",
     desc: "A systemic interface overlay that temporarily overrides standard smartphone functions, blocking all business data except those using a high-friction emergency bypass protocol — protecting the founder's recovery time with unyielding software.",
-    hmw: "HMW 01 — Enforce genuine disconnection",
+    hmw: "Solves: Enforce genuine disconnection",
     href: "/disconnect-mode",
     pages: ["Lock Screen", "Friction Form", "Proxy Config", "Breach Log"],
     accent: "#fff",
@@ -119,7 +116,7 @@ const SOLUTIONS = [
     name: "FOUNDERWALK",
     sub: "Micro-Resilience Network",
     desc: "An asynchronous matching algorithm connecting founders on specific real-time stress profiles for strictly time-boxed, 15-minute anonymous audio walks — removing scheduling friction and eliminating the illusion of isolated suffering.",
-    hmw: "HMW 04 — Normalize vulnerability without time burden",
+    hmw: "Solves: Normalize vulnerability without time burden",
     href: "/founder-walk",
     pages: ["Stressor Grid", "Matching Rules", "Active Walk", "Post-Call Reflection"],
     accent: "#FFFF00",
@@ -136,8 +133,6 @@ const STATS = [
 ];
 
 export default function HomePage() {
-  const [tickerOffset, setTickerOffset] = useState(0);
-
   return (
     <main className={styles.main}>
       {/* ─── NAV ─── */}
@@ -170,7 +165,7 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
           <div className={styles.heroBadge}>
-            <span className="brut-badge yellow">Design Thinking Research — 2025/2026</span>
+            <span className="brut-badge yellow">The Ultimate Productivity Layer</span>
           </div>
           <h1 className={styles.heroTitle}>
             YOUR<br />
@@ -179,7 +174,7 @@ export default function HomePage() {
             SYSTEM
           </h1>
           <p className={styles.heroSub}>
-            The entrepreneurial landscape of 2025 has been defined by one hidden crisis: the rapid, unmitigated depletion of the founder's psychological capital. FounderOS is the human-centered operating layer your mind has been missing.
+            The entrepreneurial landscape has been defined by one hidden crisis: the rapid, unmitigated depletion of the founder's psychological capital. FounderOS is the human-centered operating layer your mind has been missing.
           </p>
           <div className={styles.heroCtas}>
             <Link href="/cognitive-shield" className="brut-btn accent lg">
@@ -205,29 +200,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── DESIGN THINKING PHASE BAR ─── */}
-      <div className={styles.phaseBar}>
-        {PHASES.map((p, i) => (
-          <div key={p} className={styles.phaseItem}>
-            <div className={styles.phaseNum}>0{i + 1}</div>
-            <div className={styles.phaseName}>{p}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ─── POV SECTION ─── */}
-      <section className={styles.povSection}>
-        <div className={styles.povLabel}>STRONG POINT OF VIEW STATEMENT</div>
-        <blockquote className={styles.povQuote}>
-          "An early-stage startup founder needs a reliable, fail-safe mechanism to establish non-negotiable temporal boundaries and safely delegate daily micro-operations — because their compulsion for constant connectivity and profound fear of losing control lead to severe decision fatigue, which ultimately jeopardizes both their psychological well-being and the company's long-term survival."
-        </blockquote>
-      </section>
-
-      {/* ─── EMPATHY MAP ─── */}
+      {/* ─── EMPATHY MAP (THE REALITY) ─── */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Phase 01 — Empathize</span>
-          <h2 className={styles.sectionTitle}>THE FOUNDER EMPATHY MAP</h2>
+          <span className={styles.sectionLabel}>The Hidden Crisis</span>
+          <h2 className={styles.sectionTitle}>THE FOUNDER'S REALITY</h2>
         </div>
         <div className={styles.empathyGrid}>
           {EMPATHY_MAP.map((quad) => (
@@ -253,12 +230,12 @@ export default function HomePage() {
       {/* ─── PAINS & GAINS ─── */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Phase 01 — Empathize</span>
-          <h2 className={styles.sectionTitle}>STRUCTURAL PAINS & TARGETED GAINS</h2>
+          <span className={styles.sectionLabel}>The Contrast</span>
+          <h2 className={styles.sectionTitle}>THE TOLL OF SCALE</h2>
         </div>
         <div className={styles.painsGainsGrid}>
           <div className={styles.painsCard}>
-            <div className={styles.painsTitle}>⚡ STRUCTURAL PAINS</div>
+            <div className={styles.painsTitle}>⚡ THE PROBLEM</div>
             {[
               { title: "Cognitive & Strategic Overload", desc: "The sheer volume of daily micro-decisions severely depletes psychological capital required for deep strategic thinking." },
               { title: "Systemic Erosion of Trust", desc: "Paralyzing fear of delegating critical tasks — often stemming from previous traumatic business experiences." },
@@ -272,7 +249,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className={styles.gainsCard}>
-            <div className={styles.gainsTitle}>✦ TARGETED GAINS</div>
+            <div className={styles.gainsTitle}>✦ THE SOLUTION</div>
             {[
               { title: "Sustainable Cognitive Performance", desc: "Maintain high-level cognitive function without sacrificing personal health or interpersonal relationships." },
               { title: "Scalable Trust-Based Operations", desc: "Robust delegation frameworks allowing the founder to step away without the business grinding to a halt." },
@@ -288,30 +265,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── HMW QUESTIONS ─── */}
+      {/* ─── THREE SOLUTIONS (MODULES) ─── */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Phase 02 — Define</span>
-          <h2 className={styles.sectionTitle}>HOW MIGHT WE QUESTIONS</h2>
-        </div>
-        <div className={styles.hmwList}>
-          {HMW.map((h) => (
-            <Link key={h.num} href={h.href} className={styles.hmwCard}>
-              <div className={styles.hmwNum}>{h.num}</div>
-              <div className={styles.hmwQ}>{h.q}</div>
-              <div className={styles.hmwTool}>→ Answered by: {h.tool}</div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── THREE SOLUTIONS ─── */}
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Phase 03–04 — Ideate & Prototype</span>
-          <h2 className={styles.sectionTitle}>THREE ARCHITECTURAL SOLUTIONS</h2>
+          <span className={styles.sectionLabel}>The Software</span>
+          <h2 className={styles.sectionTitle}>CORE OS MODULES</h2>
           <p className={styles.sectionDesc}>
-            From 40+ divergent concepts across multiple brainstorming sprints, filtered through Desirability, Feasibility, Viability, and Alignment criteria.
+            Purpose-built applications designed to intercept burnout, enforce boundaries, and systematically preserve your psychological capital.
           </p>
         </div>
         <div className={styles.solutionsGrid}>
@@ -327,17 +287,34 @@ export default function HomePage() {
                   <span key={pg} className="brut-badge">{pg}</span>
                 ))}
               </div>
-              <div className={styles.solutionCta}>OPEN PROTOTYPE →</div>
+              <div className={styles.solutionCta}>OPEN MODULE →</div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ─── TEST FINDINGS ─── */}
+      {/* ─── DIRECTIVES ─── */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Phase 05 — Test</span>
-          <h2 className={styles.sectionTitle}>PEER TESTING FINDINGS & ITERATIONS</h2>
+          <span className={styles.sectionLabel}>Our Mission</span>
+          <h2 className={styles.sectionTitle}>CORE DIRECTIVES</h2>
+        </div>
+        <div className={styles.hmwList}>
+          {DIRECTIVES.map((h) => (
+            <Link key={h.num} href={h.href} className={styles.hmwCard}>
+              <div className={styles.hmwNum}>{h.num}</div>
+              <div className={styles.hmwQ}>{h.q}</div>
+              <div className={styles.hmwTool}>→ Managed by: {h.tool}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── TEST FINDINGS (BUILT FOR REALITY) ─── */}
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionLabel}>Constant Evolution</span>
+          <h2 className={styles.sectionTitle}>BUILT FOR REALITY</h2>
         </div>
         <div className={styles.testGrid}>
           {[
@@ -359,9 +336,9 @@ export default function HomePage() {
           ].map((t, i) => (
             <div key={i} className={styles.testCard}>
               <div className={styles.testSol}>{t.sol}</div>
-              <div className={styles.testLabel}>🔍 Observational Finding</div>
+              <div className={styles.testLabel}>🔍 The Reality</div>
               <p className={styles.testText}>{t.finding}</p>
-              <div className={styles.testLabel} style={{ color: "#006600" }}>✓ Iterative Refinement</div>
+              <div className={styles.testLabel} style={{ color: "#006600" }}>✓ The Iteration</div>
               <p className={styles.testText}>{t.iteration}</p>
             </div>
           ))}
@@ -383,15 +360,8 @@ export default function HomePage() {
 
       {/* ─── FOOTER ─── */}
       <footer className={styles.footer}>
-        <div className={styles.footerPhases}>
-          {PHASES.map((p, i) => (
-            <span key={p}>
-              {p}{i < PHASES.length - 1 && <span className={styles.footerArrow}> → </span>}
-            </span>
-          ))}
-        </div>
         <div className={styles.footerText}>
-          FounderOS — Built on Design Thinking Research. Addressing Entrepreneurial Burnout & Decision Fatigue Through Human-Centered Design.
+          FounderOS — The ultimate productivity layer. Addressing Entrepreneurial Burnout & Decision Fatigue Through Human-Centered Design.
         </div>
         <div className={styles.footerCopy}>© 2026 FounderOS. All rights reserved.</div>
       </footer>

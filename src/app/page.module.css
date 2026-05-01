@@ -147,62 +147,6 @@
   line-height: 1.3;
 }
 
-/* ─── PHASE BAR ─── */
-.phaseBar {
-  display: flex;
-  border-bottom: 3px solid #000;
-}
-.phaseItem {
-  flex: 1;
-  padding: 20px 24px;
-  border-right: 3px solid #000;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  transition: background 0.12s;
-  cursor: default;
-}
-.phaseItem:last-child { border-right: none; }
-.phaseItem:hover { background: #FFFF00; }
-.phaseNum {
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
-  font-size: 27px;
-  line-height: 1;
-}
-.phaseName {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* ─── POV SECTION ─── */
-.povSection {
-  padding: 80px 64px;
-  border-bottom: 3px solid #000;
-  background: #000;
-  color: #fff;
-}
-.povLabel {
-  font-family: 'Sora', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #FFFF00;
-  margin-bottom: 32px;
-}
-.povQuote {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: clamp(20px, 2.5vw, 32px);
-  line-height: 1.5;
-  border-left: 6px solid #FFFF00;
-  padding-left: 32px;
-  color: #fff;
-}
 
 /* ─── SECTION COMMON ─── */
 .section { padding: 80px 64px; border-bottom: 3px solid #000; }
@@ -469,14 +413,6 @@
   flex-direction: column;
   gap: 16px;
 }
-.footerPhases {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #FFFF00;
-}
-.footerArrow { color: #fff; }
+
 .footerText { font-size: 13px; color: #aaa; max-width: 700px; line-height: 1.6; }
 .footerCopy { font-size: 11px; color: #666; border-top: 1px solid #333; padding-top: 16px; }
