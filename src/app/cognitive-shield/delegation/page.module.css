@@ -1,0 +1,153 @@
+.page { min-height: 100vh; background: #fff; display: flex; flex-direction: column; }
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 3px solid #000;
+  background: #fff;
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+}
+.breadcrumb { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; }
+.breadcrumb a { color: #000; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; background: #FFFF00; }
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 35px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+.subtitle { font-size: 13px; color: #666; font-weight: 600; margin-top: 4px; }
+.saveBtn { transition: all 0.2s; }
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  flex: 1;
+  border-bottom: 3px solid #000;
+}
+
+.panel {
+  border-right: 3px solid #000;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+.panel:last-child { border-right: none; }
+.mappingPanel {
+  border-right: 3px solid #000;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.panelHeader {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 16px 20px;
+  border-bottom: 3px solid #000;
+  background: #000;
+  color: #FFFF00;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* LEFT - INTEGRATIONS */
+.integrations { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.integrationRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 3px solid #000;
+  background: #fff;
+  box-shadow: 4px 4px 0 #000;
+}
+.integrationIcon {
+  width: 32px; height: 32px;
+  background: #000; color: #fff;
+  font-family: 'Sora', sans-serif; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.integrationInfo { flex: 1; }
+.integrationName { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; }
+.integrationStatus { font-size: 10px; font-weight: 700; color: #006600; letter-spacing: 0.05em; margin-top: 2px; }
+
+/* CENTER - MAPPINGS */
+.mappingNote {
+  padding: 16px 20px;
+  font-size: 13px;
+  color: #555;
+  border-bottom: 1.5px solid #000;
+  background: #fff;
+}
+.mappings { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.mappingRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  transition: transform 0.1s;
+}
+.mappingRow:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 #000; }
+.bucketInfo { flex: 1; }
+.bucketLabel { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px; }
+.bucketDesc { font-size: 12px; color: #444; }
+.mappingArrow { font-size: 24px; font-weight: 900; }
+.memberSelect { width: 240px; display: flex; flex-direction: column; gap: 8px; }
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 3px solid #000;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  background: #fff;
+  cursor: pointer;
+}
+.assignedBadge {
+  font-size: 11px; font-weight: 700; background: #000; color: #FFFF00;
+  padding: 4px 8px; text-transform: uppercase; letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* RIGHT - TEAM */
+.members { padding: 16px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+.memberCard {
+  border: 3px solid #000;
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.memberAvatar {
+  width: 40px; height: 40px; border: 2px solid #000;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Sora', sans-serif; font-weight: 800; background: #FFFF00;
+}
+.memberInfo { flex: 1; overflow: hidden; }
+.memberName { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.memberRole { font-size: 11px; font-weight: 600; color: #555; margin: 2px 0; }
+.memberEmail { font-size: 10px; color: #888; font-family: monospace; }
+.memberLoad { font-size: 11px; font-weight: 700; background: #e0e0e0; padding: 2px 6px; border: 1px solid #000; }
+
+/* BOTTOM */
+.bottom {
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 20px 32px;
+}
+.bottomStat { display: flex; align-items: center; gap: 12px; margin-right: 48px; }
+.bottomNum { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 27px; color: #FFFF00; }
+.bottomLabel { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa; }
+.bottomNote { margin-left: auto; font-size: 12px; color: #666; font-family: monospace; }

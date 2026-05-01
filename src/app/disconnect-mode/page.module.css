@@ -1,0 +1,123 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  transition: background 0.5s ease;
+}
+
+.pageEngaged {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: calm-gradient 15s ease infinite;
+  color: #fff;
+}
+
+.pageBreach {
+  background: #FF2D2D !important;
+  animation: shatter 0.5s ease;
+}
+
+.hidden { display: none; }
+
+.adminNav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 3px solid #000;
+  background: #f0f0f0;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.timeDisplay { text-align: center; margin-bottom: 80px; }
+.time {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: clamp(80px, 15vw, 180px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+}
+.date {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+
+.toggleContainer { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.toggleLabel {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  letter-spacing: 0.1em;
+}
+
+.massiveToggle {
+  width: 280px;
+  height: 120px;
+  border: 6px solid #000;
+  border-radius: 60px;
+  background: #e0e0e0;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2), 10px 10px 0 #000;
+  transition: all 0.3s ease;
+}
+.toggleSwitch {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: #fff;
+  border: 6px solid #000;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: inset -4px -4px 8px rgba(0,0,0,0.1);
+}
+.toggleOn {
+  background: #000;
+  border-color: #FFFF00;
+  box-shadow: 0 0 40px rgba(255,255,0,0.4), 10px 10px 0 #FFFF00;
+}
+.toggleOn .toggleSwitch {
+  left: calc(100% - 104px);
+  background: #FFFF00;
+  border-color: #000;
+}
+.toggleDesc { font-size: 15px; max-width: 400px; text-align: center; opacity: 0.7; }
+
+/* BREACH ALERT */
+.breachAlert {
+  border: 6px solid #000;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 16px 16px 0 #000;
+  animation: slide-in-up 0.3s ease;
+}
+.breachHeader {
+  font-family: 'Sora', sans-serif; font-weight: 900; font-size: 27px;
+  background: #000; color: #FFFF00; padding: 24px; text-align: center;
+}
+.breachBody { padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.breachLabel { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px; color: #FF2D2D; letter-spacing: 0.1em; text-transform: uppercase; }
+.breachName { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+.breachReason { font-size: 16px; padding: 20px !important; background: #f9f9f9; border: 3px solid #000; }
+.breachActions { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid #000; }
+.breachActions button { border: none; border-right: 3px solid #000; box-shadow: none !important; }
+.breachActions button:last-child { border-right: none; }

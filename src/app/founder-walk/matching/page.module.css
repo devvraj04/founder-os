@@ -1,0 +1,104 @@
+.page {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobileContainer {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  background: #000;
+  color: #fff;
+}
+
+.loadingSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-bottom: 3px solid #333;
+}
+
+.pulseContainer {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 32px;
+}
+.pulseCircle {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #FFFF00;
+  border-radius: 50%;
+  animation: radar 2s linear infinite;
+}
+
+@keyframes radar {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.loadingText {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  letter-spacing: 0.1em;
+  color: #FFFF00;
+  margin-bottom: 8px;
+  width: 180px;
+  text-align: center;
+}
+.loadingSub {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.rulesSection {
+  padding: 32px;
+  background: #FFFF00;
+  color: #000;
+}
+.rulesHeader {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.ruleCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  margin-bottom: 16px;
+}
+.ruleCard:last-child { margin-bottom: 0; }
+
+.ruleNum {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 27px;
+  color: #FFFF00;
+  -webkit-text-stroke: 2px #000;
+  line-height: 1;
+}
+.ruleText {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}

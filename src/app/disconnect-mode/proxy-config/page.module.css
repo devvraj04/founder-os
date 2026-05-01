@@ -1,0 +1,69 @@
+.page { min-height: 100vh; background: #f4f4f4; display: flex; flex-direction: column; }
+
+.header {
+  padding: 24px 32px;
+  border-bottom: 3px solid #000;
+  background: #fff;
+}
+.breadcrumb { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; }
+.breadcrumb a { color: #000; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; background: #FFFF00; }
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 35px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+.subtitle { font-size: 13px; color: #666; font-weight: 600; margin-top: 4px; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  padding: 32px;
+  flex: 1;
+}
+
+.leftCol, .rightCol { display: flex; flex-direction: column; gap: 32px; }
+
+.panel {
+  border: 3px solid #000;
+  background: #fff;
+  box-shadow: 8px 8px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeader {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  background: #000;
+  color: #FFFF00;
+  padding: 16px 24px;
+}
+
+.panelFooter {
+  padding: 16px;
+  border-top: 3px solid #000;
+  background: #f9f9f9;
+}
+
+.responderBox { padding: 24px; }
+.responderLabel { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 12px; }
+.responderText {
+  width: 100%;
+  height: 120px;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  border: 3px solid #000;
+  resize: none;
+  background: #fff;
+  line-height: 1.5;
+}
+
+.noteBox {
+  border: 3px solid #000;
+  background: #FFFF00;
+  padding: 24px;
+  box-shadow: 6px 6px 0 #000;
+}
+.noteTitle { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 15px; margin-bottom: 12px; }
+.noteBox p { font-size: 13px; font-weight: 600; margin-bottom: 8px; }

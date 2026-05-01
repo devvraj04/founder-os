@@ -1,0 +1,116 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 32px;
+}
+
+.frictionContainer {
+  width: 100%;
+  max-width: 680px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 16px 16px 0 #000;
+}
+
+.warningHeader {
+  background: #000;
+  color: #FFFF00;
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  padding: 24px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.formBody { padding: 40px; display: flex; flex-direction: column; gap: 32px; }
+
+.context { font-size: 17px; line-height: 1.6; color: #333; }
+
+.frictionTest {
+  background: #f9f9f9;
+  border: 3px dashed #FF2D2D;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label { font-size: 13px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
+.targetPhrase {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  color: #FF2D2D;
+  background: #fff;
+  border: 2px solid #FF2D2D;
+  padding: 12px;
+  text-align: center;
+}
+
+.frictionInput {
+  width: 100%;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  border: 3px solid #000;
+  outline: none;
+}
+.frictionInput:focus { box-shadow: 6px 6px 0 #000; }
+
+.actions { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+
+.nevermindBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  background: #FFFF00;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.1s;
+}
+.nevermindBtn:hover { transform: translate(-2px,-2px); box-shadow: 10px 10px 0 #000; }
+.neverTitle { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 21px; text-align: center; }
+.neverSub { font-size: 13px; font-weight: 700; opacity: 0.8; }
+
+.interruptBtn {
+  padding: 16px;
+  background: #f0f0f0;
+  border: 2px solid #ccc;
+  color: #888;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  transition: all 0.2s;
+}
+.interruptBtn:disabled { opacity: 0.6; }
+.interruptBtn:not(:disabled) {
+  background: #FF2D2D;
+  border-color: #000;
+  color: #fff;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+}
+.interruptBtn:not(:disabled):hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #000; }
+
+.successBox {
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 16px 16px 0 #FF2D2D;
+  padding: 64px 40px;
+  text-align: center;
+  max-width: 500px;
+}
+.icon { font-size: 64px; margin-bottom: 24px; }
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 27px; color: #FF2D2D; margin-bottom: 16px; }
+.desc { font-size: 16px; }

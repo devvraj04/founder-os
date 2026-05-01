@@ -1,0 +1,68 @@
+.page {
+  min-height: 100vh;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobileContainer {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #fff;
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+}
+
+.header {
+  padding: 40px 32px 24px;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  background: #FFFF00;
+}
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 27px; margin-bottom: 8px; letter-spacing: 0.05em; }
+.subtitle { font-size: 14px; font-weight: 600; color: #444; }
+
+.content { padding: 32px; display: flex; flex-direction: column; gap: 32px; flex: 1; }
+
+.topicBox {
+  border: 3px solid #000;
+  padding: 16px;
+  text-align: center;
+  background: #f0f0f0;
+}
+.topicLabel { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #666; margin-bottom: 4px; }
+.topicName { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 16px; }
+
+.feedbackPrompt { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; text-align: center; margin-bottom: 16px; }
+.feedbackBtns { display: flex; flex-direction: column; gap: 16px; }
+.helpfulBtn { background: #000; color: #FFFF00; width: 100%; font-size: 16px !important; }
+.notHelpfulBtn { background: #fff; width: 100%; }
+
+.noteLabel { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.noteInput {
+  width: 100%;
+  height: 120px;
+  border: 3px solid #000;
+  padding: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+.noteInput:focus { box-shadow: 6px 6px 0 #000; }
+
+.successState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.icon { font-size: 64px; color: #006600; margin-bottom: 16px; }
+.desc { font-size: 14px; color: #555; }

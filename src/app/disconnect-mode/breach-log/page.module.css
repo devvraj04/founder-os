@@ -1,0 +1,40 @@
+.page { min-height: 100vh; background: #fff; display: flex; flex-direction: column; }
+
+.header {
+  padding: 24px 32px;
+  border-bottom: 3px solid #000;
+  background: #fff;
+}
+.breadcrumb { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; }
+.breadcrumb a { color: #000; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; background: #FFFF00; }
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 35px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+.subtitle { font-size: 13px; color: #666; font-weight: 600; margin-top: 4px; }
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 32px;
+  background: #f4f4f4;
+  border-bottom: 3px solid #000;
+}
+
+.statCard {
+  border: 3px solid #000;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 6px 6px 0 #000;
+  text-align: center;
+}
+.statNum { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 48px; line-height: 1; margin-bottom: 8px; }
+.statLabel { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #555; }
+
+.tableWrapper { padding: 32px; flex: 1; }
+.tableHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.tableTitle { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 17px; letter-spacing: 0.1em; }
+
+.logDate { font-weight: 700; font-size: 13px; }
+.logTime { font-family: monospace; font-size: 11px; color: #666; }
+
+.justificationText { font-size: 12px; background: #f0f0f0; padding: 4px 8px; border: 1px solid #ccc; display: block; max-width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

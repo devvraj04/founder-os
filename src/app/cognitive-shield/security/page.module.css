@@ -1,0 +1,86 @@
+.page { min-height: 100vh; background: #f9f9f9; display: flex; flex-direction: column; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 3px solid #000;
+  background: #fff;
+}
+.breadcrumb { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; }
+.breadcrumb a { color: #000; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; background: #FFFF00; }
+.title { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 35px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+.subtitle { font-size: 13px; color: #666; font-weight: 600; margin-top: 4px; }
+
+.securityBadge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 3px solid #000;
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  box-shadow: 6px 6px 0 #FFFF00;
+}
+.secBadgeIcon { font-size: 24px; }
+.secBadgeTitle { font-family: 'Sora', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 0.1em; color: #FFFF00; }
+.secBadgeSub { font-family: monospace; font-size: 11px; color: #aaa; margin-top: 4px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  flex: 1;
+  border-bottom: 3px solid #000;
+}
+
+.promptPanel { border-right: 3px solid #000; background: #fff; display: flex; flex-direction: column; }
+.rightPanels { display: flex; flex-direction: column; }
+.panel { border-bottom: 3px solid #000; background: #fff; display: flex; flex-direction: column; }
+.panel:last-child { border-bottom: none; flex: 1; }
+
+.panelHeader {
+  font-family: 'Sora', sans-serif; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 16px 24px; border-bottom: 3px solid #000; background: #f0f0f0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.panelBadge { background: #000; color: #FFFF00; padding: 4px 8px; font-size: 10px; }
+
+.promptNote { padding: 16px 24px; font-size: 13px; color: #555; background: #ffffe0; border-bottom: 1.5px solid #000; }
+.promptEditor {
+  flex: 1;
+  padding: 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  border: none;
+  background: #222;
+  color: #FFFF00;
+  resize: none;
+  outline: none;
+  min-height: 400px;
+}
+.promptActions {
+  padding: 16px 24px; border-top: 3px solid #000; background: #fff;
+  display: flex; gap: 16px;
+}
+
+.thresholdList { padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+.thresholdItem { display: flex; flex-direction: column; gap: 8px; }
+.thresholdLabel { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; }
+.thresholdDesc { font-size: 12px; color: #666; margin-bottom: 8px; }
+.thresholdControl { display: flex; align-items: center; gap: 16px; }
+.slider { flex: 1; accent-color: #000; height: 6px; }
+.thresholdValue {
+  border: 3px solid #000; font-family: 'Sora', sans-serif; font-weight: 900; font-size: 15px;
+  padding: 8px 16px; min-width: 100px; text-align: center; background: #FFFF00;
+}
+
+.authList { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.authRow { display: flex; align-items: center; gap: 16px; padding: 16px; border: 2px solid #000; box-shadow: 4px 4px 0 #000; }
+.authName { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; flex: 1; }
+.authExp { font-family: monospace; font-size: 12px; color: #666; }
+
+.logSection { background: #fff; }
+.method { font-weight: 800; font-family: monospace; }
