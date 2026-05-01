@@ -28,7 +28,7 @@ export default function MatchingRulesPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.mobileContainer}>
+      <div className={styles.container}>
         
         <div className={styles.loadingSection}>
           <div className={styles.pulseContainer}>

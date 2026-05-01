@@ -12,7 +12,7 @@ export default function ReflectionPage() {
   if (feedback) {
     return (
       <div className={styles.page}>
-        <div className={styles.mobileContainer}>
+        <div className={styles.container}>
           <div className={styles.successState}>
             <div className={styles.icon}>✓</div>
             <h1 className={styles.title}>SESSION RECORDED</h1>
@@ -26,7 +26,7 @@ export default function ReflectionPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.mobileContainer}>
+      <div className={styles.container}>
         
         <div className={styles.header}>
           <h1 className={styles.title}>WALK COMPLETE</h1>

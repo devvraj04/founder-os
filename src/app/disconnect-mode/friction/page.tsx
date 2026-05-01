@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 export default function FrictionFormPage() {
+  const router = useRouter();
   const [justification, setJustification] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const targetString = "Yes, this is an existential crisis to the company";
@@ -30,6 +32,9 @@ export default function FrictionFormPage() {
 
   return (
     <div className={styles.page}>
+      <button className={styles.backButton} onClick={() => router.back()}>
+        ← BACK
+      </button>
       <div className={styles.frictionContainer}>
         <div className={styles.warningHeader}>
           ⛔ THE FOUNDER IS CURRENTLY UNAVAILABLE

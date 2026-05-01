@@ -32,6 +32,7 @@ export default function CognitiveShieldPage() {
   const [showDropdown, setShowDropdown] = useState<number | null>(null);
   const [quarantineOpen, setQuarantineOpen] = useState(false);
   const [approvedCards, setApprovedCards] = useState<number[]>([]);
+  const [founderAction, setFounderAction] = useState<Record<number, 'handled' | 'scheduled'>>({});
 
   const handleDelegate = (cardId: number, role: string) => {
     setDelegated((prev) => ({ ...prev, [cardId]: role }));
@@ -154,11 +155,11 @@ export default function CognitiveShieldPage() {
         <div className={`${styles.column} ${styles.colYellow}`}>
           <div className={styles.colHeader}>
             <div className={styles.colTitle}>FOUNDER ACTION REQUIRED</div>
-            <span className="brut-badge red">{FOUNDER_CARDS.length}</span>
+            <span className="brut-badge red">{FOUNDER_CARDS.filter(c => !founderAction[c.id]).length}</span>
           </div>
           <div className={styles.cards}>
             {FOUNDER_CARDS.map((card) => (
-              <div key={card.id} className={`${styles.card} ${styles.founderCard}`}>
+              <div key={card.id} className={`${styles.card} ${styles.founderCard} ${founderAction[card.id] ? styles.cardDone : ""}`}>
                 <div className={styles.cardMeta}>
                   <span className="brut-badge red">{card.priority}</span>
                   <span className={styles.cardTime}>{card.time}</span>
@@ -166,8 +167,16 @@ export default function CognitiveShieldPage() {
                 <div className={styles.cardTitle}>{card.title}</div>
                 <div className={styles.cardFrom}>From: {card.from}</div>
                 <div className={styles.founderActions}>
-                  <button className="brut-btn danger sm">Handle Now</button>
-                  <button className="brut-btn sm">Schedule Later</button>
+                  {founderAction[card.id] === 'handled' ? (
+                    <div className={styles.delegatedBadge} style={{ background: "#FF2D2D", color: "#fff" }}>✓ RESOLVED</div>
+                  ) : founderAction[card.id] === 'scheduled' ? (
+                    <div className={styles.delegatedBadge}>📅 SCHEDULED FOR LATER</div>
+                  ) : (
+                    <>
+                      <button className="brut-btn danger sm" onClick={() => setFounderAction(p => ({ ...p, [card.id]: 'handled' }))}>Handle Now</button>
+                      <button className="brut-btn sm" onClick={() => setFounderAction(p => ({ ...p, [card.id]: 'scheduled' }))}>Schedule Later</button>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

@@ -13,9 +13,19 @@ const VIP_CLIENTS = [
 
 export default function ProxyConfigPage() {
   const [vips, setVips] = useState(VIP_CLIENTS);
+  const [isAdding, setIsAdding] = useState(false);
+  const [newVip, setNewVip] = useState({ name: "", phone: "", proxy: "" });
   
   const toggleVip = (id: number) => {
     setVips(vips.map(v => v.id === id ? { ...v, active: !v.active } : v));
+  };
+
+  const handleSaveVip = () => {
+    if (newVip.name && newVip.phone && newVip.proxy) {
+      setVips([...vips, { id: Date.now(), ...newVip, active: true }]);
+      setNewVip({ name: "", phone: "", proxy: "" });
+      setIsAdding(false);
+    }
   };
 
   return (
@@ -67,10 +77,50 @@ export default function ProxyConfigPage() {
                     </td>
                   </tr>
                 ))}
+                {isAdding && (
+                  <tr>
+                    <td>
+                      <input 
+                        type="text" 
+                        placeholder="Client Name" 
+                        className={styles.input} 
+                        value={newVip.name} 
+                        onChange={(e) => setNewVip({...newVip, name: e.target.value})} 
+                      />
+                    </td>
+                    <td>
+                      <input 
+                        type="text" 
+                        placeholder="Phone/Email" 
+                        className={styles.input} 
+                        value={newVip.phone} 
+                        onChange={(e) => setNewVip({...newVip, phone: e.target.value})} 
+                      />
+                    </td>
+                    <td>
+                      <select 
+                        className={styles.select} 
+                        value={newVip.proxy} 
+                        onChange={(e) => setNewVip({...newVip, proxy: e.target.value})}
+                      >
+                        <option value="">Select Proxy</option>
+                        <option value="Head of Sales">Head of Sales</option>
+                        <option value="Chief of Staff">Chief of Staff</option>
+                        <option value="Operations">Operations</option>
+                        <option value="Lead Developer">Lead Developer</option>
+                      </select>
+                    </td>
+                    <td><span className="brut-badge green">NEW</span></td>
+                    <td style={{ display: 'flex', gap: '8px' }}>
+                      <button className="brut-btn accent sm" onClick={handleSaveVip}>Save</button>
+                      <button className="brut-btn sm" onClick={() => setIsAdding(false)}>Cancel</button>
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
             <div className={styles.panelFooter}>
-              <button className="brut-btn accent">+ Add New VIP Route</button>
+              <button className="brut-btn accent" onClick={() => setIsAdding(true)}>+ Add New VIP Route</button>
             </div>
           </div>
         </div>

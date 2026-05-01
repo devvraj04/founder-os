@@ -39,7 +39,7 @@ export default function ActiveWalkPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.mobileContainer}>
+      <div className={styles.container}>
         
         <div className={styles.header}>
           <div className={styles.liveBadge}>● LIVE</div>

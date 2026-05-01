@@ -84,3 +84,57 @@
 
 .logSection { background: #fff; }
 .method { font-weight: 800; font-family: monospace; }
+
+/* MODAL */
+.modalOverlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 32px;
+}
+.modal {
+  background: #fff;
+  border: 4px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  width: 100%; max-width: 600px;
+  max-height: 90vh;
+  display: flex; flex-direction: column;
+}
+.modalHeader {
+  padding: 16px 24px;
+  background: #000; color: #FFFF00;
+  font-family: 'Sora', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: 0.1em;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.modalClose {
+  background: none; border: none; color: #FFFF00; font-size: 20px; cursor: pointer;
+}
+.modalBody {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.logDetail {
+  font-size: 14px;
+}
+.logDetail code {
+  background: #f0f0f0; padding: 2px 6px; border: 1px solid #000;
+}
+.logPayload {
+  border: 3px solid #000;
+  background: #222;
+}
+.payloadTitle {
+  padding: 8px 12px;
+  background: #000; color: #FFFF00;
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.1em;
+}
+.payloadCode {
+  padding: 16px;
+  color: #00FF00;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  margin: 0;
+  overflow-x: auto;
+}

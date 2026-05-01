@@ -29,6 +29,7 @@ export default function SecurityPage() {
     `You are the Cognitive Shield AI triage engine.\n\nYour role is to classify inbound founder communications into:\n1. DELEGATE — Low stakes, can be handled by team\n2. AUTOMATE — Routine, algorithmic response sufficient\n3. FOUNDER_REQUIRED — High impact, requires executive judgment\n\nClassify as FOUNDER_REQUIRED if:\n- Financial commitment > \\$\{{financial_threshold}}\n- Risk score > {{risk_threshold}}/100\n- Legal implications present\n- Co-founder or equity matters\n- Series-level fundraising communication\n\nNever hallucinate. When uncertain, escalate to FOUNDER_REQUIRED.`
   );
   const [saved, setSaved] = useState(false);
+  const [inspectedLog, setInspectedLog] = useState<number | null>(null);
 
   return (
     <div className={styles.page}>
@@ -146,12 +147,57 @@ export default function SecurityPage() {
                   <span className={`brut-badge ${log.status === 200 ? "green" : "red"}`}>{log.status}</span>
                 </td>
                 <td>{log.latency}</td>
-                <td><button className="brut-btn sm">Inspect</button></td>
+                <td><button className="brut-btn sm" onClick={() => setInspectedLog(i)}>Inspect</button></td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      {/* INSPECT MODAL */}
+      {inspectedLog !== null && (
+        <div className={styles.modalOverlay} onClick={() => setInspectedLog(null)}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              API SECURITY INSPECTOR
+              <button className={styles.modalClose} onClick={() => setInspectedLog(null)}>✕</button>
+            </div>
+            <div className={styles.modalBody}>
+              <div className={styles.logDetail}>
+                <strong>Endpoint:</strong> <code>{API_LOGS[inspectedLog].endpoint}</code>
+              </div>
+              <div className={styles.logDetail}>
+                <strong>Method:</strong> {API_LOGS[inspectedLog].method}
+              </div>
+              <div className={styles.logDetail}>
+                <strong>Status:</strong> {API_LOGS[inspectedLog].status}
+              </div>
+              <div className={styles.logDetail}>
+                <strong>Latency:</strong> {API_LOGS[inspectedLog].latency}
+              </div>
+              <div className={styles.logPayload}>
+                <div className={styles.payloadTitle}>RAW HTTP PAYLOAD</div>
+                <pre className={styles.payloadCode}>
+{JSON.stringify({
+  timestamp: API_LOGS[inspectedLog].time,
+  headers: {
+    "authorization": "Bearer ext_token_88291a...",
+    "x-forwarded-for": "192.168.1.1",
+    "content-type": "application/json"
+  },
+  body: {
+    action: "triage_classification",
+    confidence_score: 0.95,
+    system_instruction: "FOUNDER_REQUIRED",
+    flags: ["financial_threshold_exceeded"]
+  }
+}, null, 2)}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

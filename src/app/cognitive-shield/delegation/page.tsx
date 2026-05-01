@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
+import { SiGmail, SiSlack, SiHubspot, SiNotion, SiZapier, SiCalendly } from "react-icons/si";
 import styles from "./page.module.css";
 
 const BUCKETS = [
@@ -22,12 +23,12 @@ const MEMBERS = [
 ];
 
 const INTEGRATIONS = [
-  { name: "Gmail", status: "CONNECTED", icon: "G" },
-  { name: "Slack", status: "CONNECTED", icon: "S" },
-  { name: "HubSpot CRM", status: "CONNECTED", icon: "H" },
-  { name: "Notion", status: "CONNECTED", icon: "N" },
-  { name: "Zapier", status: "ACTIVE", icon: "Z" },
-  { name: "Calendly", status: "CONNECTED", icon: "C" },
+  { name: "Gmail", status: "CONNECTED", icon: <SiGmail color="#EA4335" /> },
+  { name: "Slack", status: "CONNECTED", icon: <SiSlack color="#4A154B" /> },
+  { name: "HubSpot CRM", status: "CONNECTED", icon: <SiHubspot color="#FF7A59" /> },
+  { name: "Notion", status: "CONNECTED", icon: <SiNotion color="#000000" /> },
+  { name: "Zapier", status: "ACTIVE", icon: <SiZapier color="#FF4A00" /> },
+  { name: "Calendly", status: "CONNECTED", icon: <SiCalendly color="#006BFF" /> },
 ];
 
 export default function DelegationPage() {

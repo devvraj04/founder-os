@@ -25,7 +25,7 @@ export default function FounderWalkPage() {
   return (
     <div className={styles.page}>
       <NavBar />
-      <div className={styles.mobileContainer}>
+      <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>FOUNDERWALK</h1>
           <p className={styles.subtitle}>You are not alone. Select your current, overwhelming stressor.</p>
